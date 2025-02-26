@@ -5,26 +5,26 @@ def getSaludo():
     print("ok en servicio persona ")
 
 def getPersona1(): 
-    Data=person.Persona()
-    Data.nombre="Juanito"
-    Data.email="juanito@juanito.com"
-    Data.edad=48
-    Data.oficio="Carpintero"
-    return Data
+    getPersona1=person.Persona()
+    getPersona1.nombre="Juanito"
+    getPersona1.email="juanito@juanito.com"
+    getPersona1.edad=48
+    getPersona1.oficio="Carpintero"
+    return getPersona1
 
 def getPersona2(): 
-    Data=person.Persona()
-    Data.nombre="Antonio"
-    Data.email="Antonio@Antonio.com"
-    Data.edad=42
-    Data.oficio="Enfermera"
+    getPersona2=person.Persona()
+    getPersona2.nombre="Antonio"
+    getPersona2.email="Antonio@Antonio.com"
+    getPersona2.edad=42
+    getPersona2.oficio="Enfermera"
 
-    return Data
+    return getPersona2
 
 def getPersona3(): 
-    Data=person.Persona()
-    Data.nombre="Manuela"
-    Data.email="Manuela@Manuela.com"
-    Data.edad=34
-    Data.oficio="Conductor"
-    return Data
+    getPersona3=person.Persona()
+    getPersona3.nombre="Manuela"
+    getPersona3.email="Manuela@Manuela.com"
+    getPersona3.edad=34
+    getPersona3.oficio="Conductor"
+    return getPersona3
