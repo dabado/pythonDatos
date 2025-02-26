@@ -1,12 +1,15 @@
-from services import servicio01prueba
+
+#from services import servicio01prueba as servi
+from services import servicio02prueba as servi
 from models import mascota
 
 print("todo bien en main")
 
 
-saludo = servicio01prueba.getSaludo()
+saludo = servi.getSaludo()
 
 
-
-gato = servicio01prueba.getMascota2()
-print(gato)
+perro = servi.getMascota1()
+gato = servi.getMascota2()
+print(f"Se llama {gato.nombre}, tiene {gato.edad} años, es un {gato.raza}")
+print(f"Se llama {perro.nombre}, tiene {perro.edad} años, es un {perro.raza}")

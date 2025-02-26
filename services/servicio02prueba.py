@@ -2,19 +2,19 @@ from models import mascota
 
 
 def getSaludo():
-    print("ok en servicios ")
+    print("ok en servicio 2 ")
 
 def getMascota1(): 
     Data=mascota.Mascota()
-    Data.nombre="Pepe"
-    Data.raza="dogo"
-    Data.edad=4
+    Data.nombre="SIRI"
+    Data.raza="Gato Montes"
+    Data.edad=3
     return Data
 
 
 def getMascota2():
     Data=mascota.Mascota()
-    Data.nombre="KIRA"
-    Data.raza="Gato Comun"
-    Data.edad=8
+    Data.nombre="David"
+    Data.raza="Humano"
+    Data.edad=48
     return Data
