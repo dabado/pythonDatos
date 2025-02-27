@@ -40,14 +40,14 @@ class ServiceOracleDepartamentos:
     def borrarDepartamentoNumero(self, numero):
         sql="""
             DELETE FROM DEPT 
-            where DEPT_NO = :numero
+            where DEPT_NO=:numero
             """
         cursor = self.conexion.cursor()
         cursor.execute(sql, (numero, ))
-        row = cursor.fetchone()
+        #row = cursor.fetchone()
         modelo = departamento.departamento()
-        modelo.numero = row[0]
-        modelo.numero = row[1]
-        modelo.numero = row[2]
+        
+        #modelo.numero = row[0]
+        self.conexion.commit()
         cursor.close()
         return modelo

@@ -24,11 +24,11 @@ def BuscarOracleDepartamentoID():
     return afectados
 
 def borrarDepartamentoNumero():
-    servicio = service.ServiceOracleDepartamentos()
+    servicio=service.ServiceOracleDepartamentos()
     print("dame un numero para el departamento a Borrar")
-    deptno=int(input())
-    afectados=servicio.borrarDepartamentoNumero(deptno)
-    print(f"Departamento encontrado: {deptno}, {afectados}")
+    numero=int(input())
+    afectados=servicio.borrarDepartamentoNumero(numero)
+    print(f"Departamento encontrado: {numero}, {afectados}")
 
 def menu():
     servicio = service.ServiceOracleDepartamentos()
