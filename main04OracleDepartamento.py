@@ -28,7 +28,7 @@ def borrarDepartamentoNumero():
     print("dame un numero para el departamento a Borrar")
     numero=int(input())
     afectados=servicio.borrarDepartamentoNumero(numero)
-    print(f"Departamento encontrado: {numero}, {afectados}")
+    print(f"Departamento eliminado numero {numero}: ,afectado: {afectados}")
 
 def menu():
     servicio = service.ServiceOracleDepartamentos()

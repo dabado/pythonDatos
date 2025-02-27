@@ -44,10 +44,8 @@ class ServiceOracleDepartamentos:
             """
         cursor = self.conexion.cursor()
         cursor.execute(sql, (numero, ))
-        #row = cursor.fetchone()
-        modelo = departamento.departamento()
-        
-        #modelo.numero = row[0]
+        registros = cursor.rowcount
+
         self.conexion.commit()
         cursor.close()
-        return modelo
+        return registros
