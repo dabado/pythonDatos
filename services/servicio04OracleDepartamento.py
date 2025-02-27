@@ -49,3 +49,28 @@ class ServiceOracleDepartamentos:
         self.conexion.commit()
         cursor.close()
         return registros
+    
+    def modificarDepartamentoNumero(self, numero, nombre , localidad):
+        sql= "UPDATE DEPT set (DNOMBRE=:nombre,loc=:localizacion where DEPT_NO=:numero )"
+        
+        cursor = self.conexion.cursor()
+        cursor.execute(sql, (numero, nombre ,localidad ))
+        registros = cursor.rowcount
+        self.conexion.commit()
+        cursor.close()
+        return registros
+
+
+    def mostrarDepartamento(self):
+        sql="select * from DEPT"
+        cursor = self.conexion.cursor()
+        cursor.execute(sql)
+        datos = []
+        for row in cursor:
+            modelo = departamento.departamento()
+            modelo.numero = row[0]
+            modelo.nombre = row[1]
+            modelo.localidad = row[2]
+            datos.append(modelo)
+        cursor.close()
+        return datos
