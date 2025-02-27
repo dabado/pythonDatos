@@ -46,9 +46,6 @@ def mostrarDepartamentos():
     afectados=servicio.mostrarDepartamento()
     for fila in afectados:
         print( fila.numero, fila.nombre , fila.localidad)
-    
-
-
 
 def menu():
     servicio = service.ServiceOracleDepartamentos()
