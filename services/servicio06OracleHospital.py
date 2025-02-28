@@ -52,7 +52,7 @@ class ServiceOracleHospital:
         print(f"modificados: {registros} registros")
         return registros
 
-    def modificaHospital(self, Hospital_cod="Hospital_cod" , nombre="nombre" , direccion="direccion" , telefono="000000" , num_cama="22"):
+    def modificaHospital(self, Hospital_cod , nombre , direccion , telefono , num_cama):
         sql="""
                 update Hospital 
                 set nombre=':inombre',

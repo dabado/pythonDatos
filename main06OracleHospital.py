@@ -4,6 +4,7 @@ from models import hospital
 def mostrarHospitales():
     servicio=service.ServiceOracleHospital()
     afectados=servicio.muestraHospitales()
+    
     for fila in afectados:
         print(fila)
         #print(fila.numeroHospital, fila.numeroHospital, fila.apellido, fila.especialidad, fila.salario)
