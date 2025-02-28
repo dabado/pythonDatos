@@ -3,25 +3,28 @@ from models import hospital
 
 def mostrarHospitales():
     servicio=service.ServiceOracleHospital()
-    afectados=servicio.muestraHospital()
+    afectados=servicio.muestraHospitales()
     for fila in afectados:
-        print(fila.numeroHospital, fila.numeroHospital, fila.apellido, fila.especialidad, fila.salario)
+        print(fila)
+        #print(fila.numeroHospital, fila.numeroHospital, fila.apellido, fila.especialidad, fila.salario)
 
 
 def nuevoHospital():
     servicio=service.ServiceOracleHospital()
-    #afectados=servicio.insertarHospital(numeroHospital,numeroHospital, apellido, especialidad, salario)
+    #afectados=servicio.insertarHospital(numeroHospital,nombreHospital, direccion, telefono, numeroCama)
     print("dame un numeroHospital para el Hospital nuevo")
     inumeroHospital=int(input())
-    print("dame un numeroHospital para el Hospital nuevo")
-    inumeroHospital=int(input())
-    print("dame una apellido para el departamento nuevo" )
-    iapellido=input()
-    print("dame una especialidad para el departamento nuevo" )
-    iespecialidad=input()
-    print("dame una salario para el departamento nuevo" )
-    isalario=int(input())
-    data=servicio.insertarHospital(inumeroHospital,inumeroHospital, iapellido, iespecialidad, isalario)
+    print("dame una nombreHospital para el Hospital nuevo" )
+    inombreHospital=input()
+    print("dame una direccion para el Hospital nuevo" )
+    idireccion=input()
+    print("dame un numeroCama para el Hospital nuevo" )
+    inumeroCama=int(input())     
+    print("dame un telefono para el Hospital nuevo" )
+    itelefono=int(input())
+
+    data=servicio.insertarHospital(inumeroHospital,inombreHospital, idireccion, itelefono, inumeroCama)
+
     print(f"nuevo {data}")
     return data
 
@@ -30,6 +33,7 @@ def quitarHospital():
     print("dame un numeroHospital para el Hospital a eliminar")
     inumeroHospital=int(input())
     data=servicio.eliminarHospital(inumeroHospital)
+    
     print(f"afectados: {data}")
     return data
 
@@ -37,15 +41,15 @@ def modificarHospital():
     servicio=service.ServiceOracleHospital()
     print("dame un numero para el inumeroHospital a modificar")
     inumeroHospital=int(input())
-    print("dame un numero para el inumeroHospital a modificar")
-    inumeroHospital=int(input())
-    print("dame un  iapellido a modificar")
-    iapellido=input()
-    print("dame una especialidad para la iespecialidad a modificar")
-    iespecialidad=input()
-    print("dame un numero para el isalario a modificar")
-    isalario=int(input())
-    data=servicio.modificaHospital(inumeroHospital,inumeroHospital, iapellido, iespecialidad, isalario)
+    print("dame un inombreHospital para el {inumeroHospital} a modificar")
+    inombreHospital=input()
+    print("dame un  idireccion a modificar")
+    idireccion=input()
+    print("dame un telefono el Hospital a modificar")
+    itelefono=int(input())
+    print("dame un numero de camas para el Hospital a modificar")
+    inumeroCama=int(input())
+    data=servicio.modificaHospital(inumeroHospital, inombreHospital, idireccion, itelefono, inumeroCama)
     print(f"afectados:{data}")
     return data
 
@@ -54,10 +58,10 @@ def modificarHospital():
 
 def menu():
     servicio=service.ServiceOracleHospital()
-    print("1._Insertar departamento")
-    print("2._Buscar departamento")
-    print("3._borrar Departamento por Numero")
-    print("4._modificar Departamento por Numero")
+    print("1.Mostrar Hospital")
+    print("2.nuevo Hospital")
+    print("3._borrar Hospital por Numero")
+    print("4._modificar Hospital por Numero")
     print("elije accion")
     opcion=int(input())
     if (opcion == 1):
@@ -70,9 +74,10 @@ def menu():
         print(resultado)
     elif (opcion == 4):
         resultado=modificarHospital()
-        print(resultado)
     else:
         print("introcuce un dato valido")
-#nuevoDepartamento()
-#nuevoHospital()
+
+
+
+
 menu()
