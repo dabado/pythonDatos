@@ -57,7 +57,8 @@ def modificarHospital():
 
 
 def menu():
-    while true:
+    while   true:
+        
             servicio=service.ServiceOracleHospital()
             print("1.Mostrar Hospital")
             print("2.nuevo Hospital")
