@@ -11,7 +11,6 @@ def mostrarHospitales():
 
 def nuevoHospital():
     servicio=service.ServiceOracleHospital()
-    #afectados=servicio.insertarHospital(numeroHospital,nombreHospital, direccion, telefono, numeroCama)
     print("dame un numeroHospital para el Hospital nuevo")
     inumeroHospital=int(input())
     print("dame una nombreHospital para el Hospital nuevo" )
@@ -40,16 +39,17 @@ def quitarHospital():
 def modificarHospital():
     servicio=service.ServiceOracleHospital()
     print("dame un numero para el inumeroHospital a modificar")
-    inumeroHospital=int(input())
-    print("dame un inombreHospital para el {inumeroHospital} a modificar")
-    inombreHospital=input()
-    print("dame un  idireccion a modificar")
-    idireccion=input()
+    numeroHospital=int(input())
+    print(f"dame un inombreHospital para el {numeroHospital} a modificar")
+    nombreHospital=input()
+    print("dame una idireccion a modificar")
+    direccion=input()
     print("dame un telefono el Hospital a modificar")
-    itelefono=int(input())
+    telefono=int(input())
     print("dame un numero de camas para el Hospital a modificar")
-    inumeroCama=int(input())
-    data=servicio.modificaHospital(inumeroHospital, inombreHospital, idireccion, itelefono, inumeroCama)
+    numeroCama=int(input())
+
+    data=servicio.modificaHospital(numeroHospital , nombreHospital , direccion , telefono , numeroCama)
     print(f"afectados:{data}")
     return data
 
@@ -67,7 +67,8 @@ def menu():
             print("elije accion")
             opcion=int(input())
             if (opcion == 1):
-                mostrarHospitales()
+                resultado=mostrarHospitales()
+                print(resultado)
             elif (opcion == 2):
                 resultado=nuevoHospital()
                 print(resultado)
@@ -76,6 +77,7 @@ def menu():
                 print(resultado)
             elif (opcion == 4):
                 resultado=modificarHospital()
+                print(resultado)
             elif (opcion == 0):
                 break
             else:

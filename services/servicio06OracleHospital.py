@@ -18,7 +18,8 @@ class ServiceOracleHospital:
         cursor.execute(sql)
         datos = []
         for row in cursor:
-            print(row)
+            
+            datos.append(row)
             """
             modelo = model.Hospital()
             modelo.Hospital_cod = row[0]
@@ -51,10 +52,17 @@ class ServiceOracleHospital:
         print(f"modificados: {registros} registros")
         return registros
 
-    def modificaHospital(self, Hospital_cod , nombre , direccion , telefono , num_cama ):
-        sql="update Hospital set (nombre=:inombre,  direccion=:idireccion, telefono=:itelefono ,num_cama=:inum_cama where Hospital_cod=:Hospital_cod)"
+    def modificaHospital(self, Hospital_cod="Hospital_cod" , nombre="nombre" , direccion="direccion" , telefono="000000" , num_cama="22"):
+        sql="""
+                update Hospital 
+                set nombre=':inombre',
+                direccion=':idireccion',
+                telefono=:itelefono , 
+                num_cama=:inum_cama
+                where Hospital_cod=:Hospital_cod
+            """
         cursor = self.conexion.cursor()        
-        cursor.execute(sql, (Hospital_cod , nombre , direccion , telefono , num_cama ))
+        cursor.execute(sql, ( Hospital_cod , nombre , direccion , telefono , num_cama ))
         registros=cursor.rowcount
         self.conexion.commit()
         cursor.close()
