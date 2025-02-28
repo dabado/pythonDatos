@@ -57,25 +57,26 @@ def modificarHospital():
 
 
 def menu():
-    servicio=service.ServiceOracleHospital()
-    print("1.Mostrar Hospital")
-    print("2.nuevo Hospital")
-    print("3._borrar Hospital por Numero")
-    print("4._modificar Hospital por Numero")
-    print("elije accion")
-    opcion=int(input())
-    if (opcion == 1):
-        mostrarHospitales()
-    elif (opcion == 2):
-        resultado=nuevoHospital()
-        print(resultado)
-    elif (opcion == 3):
-        resultado=quitarHospital()
-        print(resultado)
-    elif (opcion == 4):
-        resultado=modificarHospital()
-    else:
-        print("introcuce un dato valido")
+    while true:
+            servicio=service.ServiceOracleHospital()
+            print("1.Mostrar Hospital")
+            print("2.nuevo Hospital")
+            print("3._borrar Hospital por Numero")
+            print("4._modificar Hospital por Numero")
+            print("elije accion")
+            opcion=int(input())
+            if (opcion == 1):
+                mostrarHospitales()
+            elif (opcion == 2):
+                resultado=nuevoHospital()
+                print(resultado)
+            elif (opcion == 3):
+                resultado=quitarHospital()
+                print(resultado)
+            elif (opcion == 4):
+                resultado=modificarHospital()
+            else:
+                print("introcuce un dato valido")
 
 
 
