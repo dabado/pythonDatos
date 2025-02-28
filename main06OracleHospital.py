@@ -57,13 +57,13 @@ def modificarHospital():
 
 
 def menu():
-    while   true:
-        
+    while True:
             servicio=service.ServiceOracleHospital()
             print("1.Mostrar Hospital")
             print("2.nuevo Hospital")
             print("3._borrar Hospital por Numero")
             print("4._modificar Hospital por Numero")
+            print("0._salir")
             print("elije accion")
             opcion=int(input())
             if (opcion == 1):
@@ -76,6 +76,8 @@ def menu():
                 print(resultado)
             elif (opcion == 4):
                 resultado=modificarHospital()
+            elif (opcion == 0):
+                break
             else:
                 print("introcuce un dato valido")
 
