@@ -83,9 +83,9 @@ def menu():
     while True:
         print("1.Mostrar menu Hospital")
         print("2.Mostrar menu Doctores")
-        print("3._borrar  por Numero")
-        print("4._modificar  por Numero")
-        print("0.Mostrar menu Hospital")
+        print("3.Mostrar menu Departamentod")
+        print("4._Mostrar menu Personas")
+        print("0.salir")
         print("elije accion")
         #opcion = input("Seleccione una opción: ")
         opcion=int(input())
