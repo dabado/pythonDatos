@@ -57,34 +57,60 @@ def modificarHospital():
 
 
 
-def menu():
+def menuHospital():
+    servicio=service.ServiceOracleHospital()
+
     while True:
-            servicio=service.ServiceOracleHospital()
-            print("1.Mostrar Hospital")
-            print("2.nuevo Hospital")
-            print("3._borrar Hospital por Numero")
-            print("4._modificar Hospital por Numero")
-            print("0._salir")
-            print("elije accion")
-            opcion=int(input())
-            if (opcion == 1):
-                resultado=mostrarHospitales()
-                print(resultado)
-            elif (opcion == 2):
-                resultado=nuevoHospital()
-                print(resultado)
-            elif (opcion == 3):
-                resultado=quitarHospital()
-                print(resultado)
-            elif (opcion == 4):
-                resultado=modificarHospital()
-                print(resultado)
-            elif (opcion == 0):
-                break
-            else:
-                print("introcuce un dato valido")
+        print("1.Mostrar Hospital")
+        print("2.nuevo Hospital")
+        print("3._borrar Hospital por Numero")
+        print("4._modificar Hospital por Numero")
+        print("0._volver al menu principal")
+        print("elije accion")
+        #opcion = input("Seleccione una opción: ")
+        opcion=int(input())
+        
+        if (opcion == 1):
+            mostrarHospitales()
+        elif (opcion == 2):
+            resultado=nuevoHospital()
+            print(resultado)
+        elif (opcion == 3):
+            resultado=quitarHospital()
+            print(resultado)
+        elif (opcion == 4):
+            resultado=modificarHospital()
+        elif (opcion == 0):
+            break
+        else:
+            
+            print("introcuce un dato valido")
 
+def menu():
+    servicio=service.ServiceOracleHospital()
 
+    while True:
+        print("1.Mostrar menu Hospital")
+        print("2.nuevo")
+        print("3._borrar  por Numero")
+        print("4._modificar  por Numero")
+        print("0.Mostrar menu Hospital")
+        print("elije accion")
+        #opcion = input("Seleccione una opción: ")
+        opcion=int(input())
+        
+        if (opcion == 1):
+            menuHospital()
+        elif (opcion == 2):
+            resultado=nuevoHospital()
+            print(resultado)
+        elif (opcion == 3):
+            resultado=quitarHospital()
+            print(resultado)
+        elif (opcion == 0):
+            break
+        else:
+            print("introcuce un dato valido")
 
 
 menu()
