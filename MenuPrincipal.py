@@ -2,7 +2,29 @@
 from models import hospital
 from MenuHospital import MENUHOSPITAL
 from MenuDoctores import MENUDOCTORES
-
+from MenuDepartamentos import MENUDEPARTAMENTO
+def menuDepartamento():
+    #servicio = service.ServiceOracleDepartamentos()
+    print("1._Insertar departamento")
+    print("2._Buscar departamento")
+    print("3._borrar Departamento por Numero")
+    print("4._modificar Departamento por Numero")
+    print("5._mostrar Departamentos")
+    print("elije accion")
+    opcion=int(input())
+    if (opcion == 1):
+        MENUDEPARTAMENTO.nuevoDepartamento()
+    elif (opcion == 2):
+        #dept = servicio.buscarDepartamentoNumero()
+        MENUDEPARTAMENTO.BuscarOracleDepartamentoID()
+    elif (opcion == 3):
+        MENUDEPARTAMENTO.borrarDepartamentoNumero()
+    elif (opcion == 4):
+        MENUDEPARTAMENTO.modificarDepartamentoNumero()
+    elif (opcion == 5):
+        MENUDEPARTAMENTO.mostrarDepartamentos()
+    else:
+        print("introcuce un dato valido")
 
 def menuDoctores():
     #servicio = service.ServiceOracleDepartamentos()
@@ -73,7 +95,9 @@ def menu():
         elif (opcion == 2):
             menuDoctores()
         elif (opcion == 3):
-            menuTurnos()
+            menuDepartamento()
+        elif (opcion == 3):
+            menuPersonas()
         elif (opcion == 0):
             break
         else:
