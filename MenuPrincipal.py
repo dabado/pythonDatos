@@ -126,7 +126,7 @@ def menu():
             menuDoctores()
         elif (opcion == 3):
             menuDepartamento()
-        elif (opcion == 3):
+        elif (opcion == 4):
             menuPlantilla()
         elif (opcion == 0):
             break
