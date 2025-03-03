@@ -12,7 +12,7 @@ class ServiceOraclePlantilla:
         else:
             print("fallo de conexion")
 
-    def muestraPlantillaes(self):
+    def muestraPlantilla(self):
         sql="select * from Plantilla"
         cursor = self.conexion.cursor()
         cursor.execute(sql)
