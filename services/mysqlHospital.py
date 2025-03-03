@@ -1,6 +1,6 @@
 import oracledb
 import mysql.connector as bd
-from models import hospital as model
+from models import hospital 
 # Hospital_cod , nombre , direccion , telefono , num_cama
 
 
