@@ -3,6 +3,33 @@ from models import hospital
 from MenuHospital import MENUHOSPITAL
 from MenuDoctores import MENUDOCTORES
 from MenuDepartamentos import MENUDEPARTAMENTO
+
+
+def menuPlantilla():
+    #servicio = service.ServiceOraclePlantilla()
+    print("1._mostrar Plantilla")
+    print("2._Insertar Plantilla")
+    print("3._Buscar Plantilla")
+    print("4._borrar Plantilla por Numero")
+    print("5._modificar Plantilla por Numero")
+
+    print("elije accion")
+    opcion=int(input())
+    if (opcion == 1):
+        MENUPLANTILLA.mostrarDepartamentos()
+    elif (opcion == 2):
+        #dept = servicio.buscarDepartamentoNumero()
+        MENUPLANTILLA.BuscarOracleDepartamentoID()
+    elif (opcion == 3):
+        MENUPLANTILLA.borrarDepartamentoNumero()
+    elif (opcion == 4):
+        MENUPLANTILLA.modificarDepartamentoNumero()
+    elif (opcion == 5):
+        MENUPLANTILLA.nuevoDepartamento()
+    else:
+        print("introcuce un dato valido")
+
+
 def menuDepartamento():
     #servicio = service.ServiceOracleDepartamentos()
     print("1._Insertar departamento")
@@ -85,6 +112,7 @@ def menu():
         print("2.Mostrar menu Doctores")
         print("3.Mostrar menu Departamentod")
         print("4._Mostrar menu Personas")
+        print("5._Mostrar menu Plantilla")
         print("0.salir")
         print("elije accion")
         #opcion = input("Seleccione una opción: ")
@@ -96,8 +124,10 @@ def menu():
             menuDoctores()
         elif (opcion == 3):
             menuDepartamento()
-        elif (opcion == 3):
+        elif (opcion == 4):
             menuPersonas()
+        elif (opcion == 5):
+            menuPlantilla()
         elif (opcion == 0):
             break
         else:
