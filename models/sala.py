@@ -1,5 +1,5 @@
 class sala:
-    hospital_cod=""
+    hospital_cod=0
     sala_cod=0
     nombre=""
     num_cama=0
