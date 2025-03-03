@@ -1,5 +1,5 @@
 
-class empleado:
+class Empleado:
     EMP_NO=0
     APELLIDO=""
     OFICIO=""
