@@ -1,5 +1,9 @@
 from services import servicio06OracleHospital as service
 from models import hospital
+from models import doctor
+from models import departamento
+from models import plantilla
+
 from MenuHospital import MENUHOSPITAL
 from MenuDoctores import MENUDOCTORES
 from MenuDepartamentos import MENUDEPARTAMENTO
