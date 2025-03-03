@@ -1,4 +1,4 @@
-from models import persona as person
+from models.old import persona as person
 
 
 def getSaludo():

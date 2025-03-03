@@ -1,4 +1,4 @@
-from models import mascota
+from models.old import mascota
 
 
 def getSaludo():

@@ -1,7 +1,7 @@
 
 #from services import servicio01prueba as servi
 from services import servicio02prueba as servi
-from models import mascota
+from models.old import mascota
 
 print("todo bien en main")
 

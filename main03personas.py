@@ -1,5 +1,5 @@
 from services import servicio03persona as service
-from models import persona as person
+from models.old import persona as person
 
 personaje1 = service.getPersona1()
 personaje2 = service.getPersona2()

@@ -1,5 +1,5 @@
 import oracledb
-from models import Plantilla as model
+from models import plantilla 
 # Plantilla_cod , nombre , direccion , telefono , num_cama
 
 
