@@ -4,9 +4,9 @@ from models import plantilla
 
 class MENUPLANTILLA:
         servicio=service.ServiceOraclePlantilla()
-        def mostrarPlantillaes():
+        def muestraPlantilla():
             servicio=service.ServiceOraclePlantilla()
-            afectados=servicio.muestraPlantillaes()
+            afectados=servicio.muestraPlantilla()
             for fila in afectados:
                 print(fila)
                 #print(fila.numeroPlantilla, fila.numeroPlantilla, fila.apellido, fila.especialidad, fila.salario)
@@ -55,4 +55,3 @@ class MENUPLANTILLA:
             data=servicio.modificaPlantilla(inumeroPlantilla, inombrePlantilla, idireccion, itelefono, inumeroCama)
             print(f"afectados:{data}")
             return data
-
