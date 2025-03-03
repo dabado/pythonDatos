@@ -10,7 +10,8 @@ sql="select APELLIDO FROM EMP"
 cursor= conection.cursor()
 cursor.execute(sql)
 datos = []
-for row in cursor:
-            
+for row in cursor:    
     datos.append(row)
 print(f"resultados:   {datos}")
+cursor.close()
+conection.close()

@@ -9,6 +9,35 @@ from MenuDoctores import MENUDOCTORES
 from MenuDepartamentos import MENUDEPARTAMENTO
 from MenuPlantilla import MENUPLANTILLA
 
+def menuSala():
+    #servicio=service.ServiceOracleHospital()
+
+    while True:
+        print("1.Mostrar Sala")
+        print("2.nuevo Sala")
+        print("3._borrar Sala por Numero")
+        print("4._modificar Sala por Numero")
+        print("0._volver al menu principal")
+        print("elije accion")
+        #opcion = input("Seleccione una opción: ")
+        opcion=int(input())
+        
+        if (opcion == 1):
+            MENUSALA.mostrarHospitales()
+        elif (opcion == 2):
+           MENUSALA.nuevoHospital()
+        elif (opcion == 3):
+            MENUSALA.quitarHospital
+        elif (opcion == 4):
+            MENUSALA.modificarHospital
+        elif (opcion == 0):
+            break
+        else:
+            
+            print("introcuce un dato valido")
+
+
+
 def menuPlantilla():
     #servicio = service.ServiceOraclePlantilla()
     print("1._Insertar Plantilla")
@@ -114,7 +143,10 @@ def menu():
         print("1.Mostrar menu Hospital")
         print("2.Mostrar menu Doctores")
         print("3.Mostrar menu Departamentod")
-        print("4._Mostrar menu Plantilla")
+        print("4._Mostrar menu Empleado")
+        print("5._Mostrar menu enfermo")
+        print("6._Mostrar menu sala")
+        print("7._Mostrar menu Plantilla")
         print("0.salir")
         print("elije accion")
         #opcion = input("Seleccione una opción: ")
