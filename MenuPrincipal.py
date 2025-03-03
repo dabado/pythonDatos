@@ -1,31 +1,30 @@
-#from services import servicio06OracleHospital as service
+from services import servicio06OracleHospital as service
 from models import hospital
 from MenuHospital import MENUHOSPITAL
 from MenuDoctores import MENUDOCTORES
 from MenuDepartamentos import MENUDEPARTAMENTO
-
+from MenuPlantilla import MENUPLANTILLA
 
 def menuPlantilla():
     #servicio = service.ServiceOraclePlantilla()
-    print("1._mostrar Plantilla")
-    print("2._Insertar Plantilla")
-    print("3._Buscar Plantilla")
-    print("4._borrar Plantilla por Numero")
-    print("5._modificar Plantilla por Numero")
-
+    print("1._Insertar Plantilla")
+    print("2._Buscar Plantilla")
+    print("3._borrar Plantilla por Numero")
+    print("4._modificar Plantilla por Numero")
+    print("5._mostrar Plantilla")
     print("elije accion")
     opcion=int(input())
     if (opcion == 1):
-        MENUPLANTILLA.mostrarDepartamentos()
+        MENUPLANTILLA.nuevoPlantilla()
     elif (opcion == 2):
         #dept = servicio.buscarDepartamentoNumero()
-        MENUPLANTILLA.BuscarOracleDepartamentoID()
+        MENUPLANTILLA.BuscarOraclePlantilla()
     elif (opcion == 3):
-        MENUPLANTILLA.borrarDepartamentoNumero()
+        MENUPLANTILLA.borrarPlantillaNumero()
     elif (opcion == 4):
-        MENUPLANTILLA.modificarDepartamentoNumero()
+        MENUPLANTILLA.modificarPlantillaNumero()
     elif (opcion == 5):
-        MENUPLANTILLA.nuevoDepartamento()
+        MENUPLANTILLA.mostrarPlantilla()
     else:
         print("introcuce un dato valido")
 
@@ -111,8 +110,7 @@ def menu():
         print("1.Mostrar menu Hospital")
         print("2.Mostrar menu Doctores")
         print("3.Mostrar menu Departamentod")
-        print("4._Mostrar menu Personas")
-        print("5._Mostrar menu Plantilla")
+        print("4._Mostrar menu Plantilla")
         print("0.salir")
         print("elije accion")
         #opcion = input("Seleccione una opción: ")
@@ -124,9 +122,7 @@ def menu():
             menuDoctores()
         elif (opcion == 3):
             menuDepartamento()
-        elif (opcion == 4):
-            menuPersonas()
-        elif (opcion == 5):
+        elif (opcion == 3):
             menuPlantilla()
         elif (opcion == 0):
             break
