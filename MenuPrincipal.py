@@ -24,11 +24,11 @@ def menuPlantilla():
         #dept = servicio.buscarDepartamentoNumero()
         MENUPLANTILLA.BuscarOraclePlantilla()
     elif (opcion == 3):
-        MENUPLANTILLA.borrarPlantillaNumero()
+        MENUPLANTILLA.quitarPlantilla()
     elif (opcion == 4):
-        MENUPLANTILLA.modificarPlantillaNumero()
+        MENUPLANTILLA.modificarPlantilla()
     elif (opcion == 5):
-        MENUPLANTILLA.mostrarPlantilla()
+        MENUPLANTILLA.muestraPlantilla()
     else:
         print("introcuce un dato valido")
 
