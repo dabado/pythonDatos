@@ -1,5 +1,6 @@
 
 class Empleado:
+    #  emp_no, apellido , oficio , dir , fecha_alta , salario, comision, dept_no
     EMP_NO=0
     APELLIDO=""
     OFICIO=""

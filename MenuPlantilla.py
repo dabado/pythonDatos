@@ -55,3 +55,11 @@ class MENUPLANTILLA:
             data=servicio.modificaPlantilla(inumeroPlantilla, inombrePlantilla, idireccion, itelefono, inumeroCama)
             print(f"afectados:{data}")
             return data
+        
+        def BuscarOracleDePlantilla():
+            servicio = service.ServiceOraclePlantilla()
+            print("dame un numero para el departamento a buscar")
+            deptno=int(input())
+            afectados=servicio.buscarOraclePlantilla(deptno)
+            print(f"Departamento encontrado: {deptno}, {afectados}")
+            return afectados

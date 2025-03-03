@@ -5,19 +5,25 @@ from models import enfermo
 class MENUDENFERMO:
     servicio = service.ServiceOracleEnfermo()
     def nuevoEnfermo():
-        servicio = service.ServiceOracleEnfermo()
+        #servicio = service.ServiceOracleEnfermo()
         print("dame un numero para el Enfermo nuevo")
-        deptno=int(input())
+        inscripcion=int(input())
         print("dame un nombre para el Enfermo nuevo")
-        dname=input()
+        apellido=input()
         print("dame una localizacion para el Enfermo nuevo" )
-        LOCA=input()
-        afectados=servicio.insertarSala(deptno, dname, LOCA)
+        direccion=input()
+        print("dame una fecha de nacimiento para el Enfermo nuevo" )
+        fecha_nac=input()
+        print("dame un sexo para el Enfermo nuevo" )
+        sexo=input()
+        print("dame un numero de seguridad social para el Enfermo nuevo" )
+        nss=input()
+        afectados=service.ServiceOracleEnfermo(inscripcion , apellido , direccion, fecha_nac, sexo, nss)
         print(f"Enfermo insertado: {afectados}")
 
 
     def BuscarOracleEnfermoID():
-        servicio = service.ServiceOracleEnfermos()
+        servicio = service.ServiceOracleEnfermo()
         print("dame un numero para el Enfermo a buscar")
         deptno=int(input())
         afectados=servicio.buscarEnfermoNumero(deptno)
@@ -25,21 +31,21 @@ class MENUDENFERMO:
         return afectados
 
     def borrarEnfermoNumero():
-        servicio=service.ServiceOracleEnfermos()
+        servicio=service.ServiceOracleEnfermo()
         print("dame un numero para el Enfermo a Borrar")
         numero=int(input())
-        afectados=servicio.borrarEnfermoNumero(numero)
+        afectados=servicio.eliminarEnfermo(numero)
         print(f"Enfermo eliminado numero {numero}: ,afectado: {afectados}")
 
     def modificarEnfermoNumero():
-        servicio=service.ServiceOracleEnfermos()
+        servicio=service.ServiceOracleEnfermo()
         print("dame un numero para el Enfermo a modificar")
         numero=int(input())
         print("dame un nombre para el Enfermo a modificar")
         nombre=input()
         print("dame una localidad para el Enfermo a modificar")
         localidad=input()
-        afectados=servicio.modificarEnfermo(numero, nombre, localidad )
+        afectados=servicio.modificaEnfermo(inscripcion , apellido , direccion, fecha_nac, sexo, nss)
         print(f"Enfermo modificado numero {numero}: ,afectado: {afectados}")
 
     def mostrarEnfermos():

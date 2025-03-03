@@ -1,6 +1,6 @@
 import oracledb
 from models import sala 
-# Enfermo_cod , nombre , direccion , telefono , num_cama
+  # inscripcion , apellido , direccion, fecha_nac, sexo, nss
 
 
 class ServiceOracleEnfermo:
@@ -22,18 +22,18 @@ class ServiceOracleEnfermo:
         cursor.close()
         return datos
 
-    def insertarEnfermo(self,Enfermo_cod , nombre , direccion , telefono , num_cama):
-        sql="insert into Enfermo values(:Enfermo_cod , :nombre , :direccion , :telefono , :num_cama)"
+    def insertarEnfermo(self,inscripcion , apellido , direccion, fecha_nac, sexo, nss):
+        sql="insert into Enfermo values(:inscripcion , :apellido , :direccion , :fecha_nac , :sexo , :nss)"
         cursor=self.conexion.cursor()
-        cursor.execute(sql, (Enfermo_cod , nombre , direccion , telefono , num_cama))
+        cursor.execute(sql, (inscripcion , apellido , direccion, fecha_nac, sexo, nss))
         registrosAfectados=cursor.rowcount
         self.conexion.commit()
         cursor.close()
-        print(f"inse {registrosAfectados}")
+        print(f"insertamos: {registrosAfectados}")
         return registrosAfectados
 
     def eliminarEnfermo(self, idEnfermo):
-        sql="delete from Enfermo where Enfermo_cod=:idEnfermo"
+        sql="delete from Enfermo where inscripcion=:inscripcion"
         cursor = self.conexion.cursor()        
         cursor.execute(sql, (idEnfermo, ))
         registros = cursor.rowcount
@@ -42,17 +42,19 @@ class ServiceOracleEnfermo:
         print(f"modificados: {registros} registros")
         return registros
 
-    def modificaEnfermo(self, Enfermo_cod , nombre , direccion , telefono , num_cama):
+    def modificaEnfermo(self, inscripcion , apellido , direccion, fecha_nac, sexo, nss):
         sql="""
                 update Enfermo 
-                set nombre=':inombre',
-                direccion=':idireccion',
-                telefono=:itelefono , 
-                num_cama=:inum_cama
-                where Enfermo_cod=:Enfermo_cod
+                set inscripcion=':inscripcion',
+                apellido=':apellido'
+                direccion=':direccion',
+                fecha_nac=':fecha_nac' , 
+                sexo=':sexo',
+                nss=:nss
+                where inscripcion=:inscripcion
             """
         cursor = self.conexion.cursor()        
-        cursor.execute(sql, ( Enfermo_cod , nombre , direccion , telefono , num_cama ))
+        cursor.execute(sql, ( inscripcion , apellido , direccion, fecha_nac, sexo, nss ))
         registros=cursor.rowcount
         self.conexion.commit()
         cursor.close()

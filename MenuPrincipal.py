@@ -1,23 +1,24 @@
-from services import servicio06OracleHospital as service
+from services import servicioOracleEnfermo as service
+
 from models import hospital
 from models import doctor
 from models import departamento
 from models import plantilla
 from models import empleado
 from models import sala
+from models import enfermo
+
 from MenuHospital import MENUHOSPITAL
 from MenuDoctores import MENUDOCTORES
 from MenuDepartamentos import MENUDEPARTAMENTO
 from MenuPlantilla import MENUPLANTILLA
-from MenuEmpleados import MENUEMPLEADO
+from MenuEmpleado import MENUEMPLEADO
 from MenuEnfermo import MENUDENFERMO
 from MenuSala import MENUSALA
 
 
 
 def menuEnfermo():
-    #servicio=service.ServiceOracleEmpleado()
-
     while True:
         print("1.Mostrar Enfermo")
         print("2.nuevo Enfermo")
@@ -25,7 +26,6 @@ def menuEnfermo():
         print("4._modificar Enfermo por Numero")
         print("0._volver al menu principal")
         print("elije accion")
-        #opcion = input("Seleccione una opción: ")
         opcion=int(input())
         
         if (opcion == 1):
@@ -39,13 +39,10 @@ def menuEnfermo():
         elif (opcion == 0):
             break
         else:
-            
             print("introcuce un dato valido")
 
 
 def menuEmpleado():
-    #servicio=service.ServiceOracleEmpleado()
-
     while True:
         print("1.Mostrar Empleado")
         print("2.nuevo Empleado")
@@ -53,9 +50,7 @@ def menuEmpleado():
         print("4._modificar Empleado por Numero")
         print("0._volver al menu principal")
         print("elije accion")
-        #opcion = input("Seleccione una opción: ")
         opcion=int(input())
-        
         if (opcion == 1):
             MENUEMPLEADO.mostrarEmpleado()
         elif (opcion == 2):
@@ -67,13 +62,10 @@ def menuEmpleado():
         elif (opcion == 0):
             break
         else:
-            
             print("introcuce un dato valido")
 
 
 def menuSala():
-    #servicio=service.ServiceOracleHospital()
-
     while True:
         print("1.Mostrar Sala")
         print("2.nuevo Sala")
@@ -81,9 +73,7 @@ def menuSala():
         print("4._modificar Sala por Numero")
         print("0._volver al menu principal")
         print("elije accion")
-        #opcion = input("Seleccione una opción: ")
         opcion=int(input())
-        
         if (opcion == 1):
             MENUSALA.mostrarsala()
         elif (opcion == 2):
@@ -95,13 +85,11 @@ def menuSala():
         elif (opcion == 0):
             break
         else:
-            
             print("introcuce un dato valido")
 
 
 
 def menuPlantilla():
-    #servicio = service.ServiceOraclePlantilla()
     print("1.mostrar Plantilla")
     print("2._Buscar Plantilla")
     print("3._borrar Plantilla por Numero")
@@ -112,7 +100,6 @@ def menuPlantilla():
     if (opcion == 1):
         MENUPLANTILLA.muestraPlantilla()
     elif (opcion == 2):
-        #dept = servicio.buscarDepartamentoNumero()
         MENUPLANTILLA.BuscarPlantilla()
     elif (opcion == 3):
         MENUPLANTILLA.quitarPlantilla()
@@ -125,7 +112,6 @@ def menuPlantilla():
 
 
 def menuDepartamento():
-    #servicio = service.ServiceOracleDepartamentos()
     print("1.Mostrar departamento")
     print("2._Buscar departamento")
     print("3._borrar Departamento por Numero")
@@ -134,7 +120,6 @@ def menuDepartamento():
     print("elije accion")
     opcion=int(input())
     if (opcion == 1):
-
         MENUDEPARTAMENTO.mostrarDepartamentos()
     elif (opcion == 2):
         MENUDEPARTAMENTO.BuscarOracleDepartamentoID()
@@ -144,12 +129,10 @@ def menuDepartamento():
         MENUDEPARTAMENTO.modificarDepartamentoNumero()
     elif (opcion == 5):
         MENUDEPARTAMENTO.nuevoDepartamento()
-        
     else:
         print("introcuce un dato valido")
 
 def menuDoctores():
-    #servicio = service.ServiceOracleDepartamentos()
     while True:
         print("1._mostrar doctores")
         print("2._Nuevo doctor ")
@@ -173,8 +156,6 @@ def menuDoctores():
 
 
 def menuHospital():
-    #servicio=service.ServiceOracleHospital()
-
     while True:
         print("1.Mostrar Hospital")
         print("2.nuevo Hospital")
@@ -182,9 +163,7 @@ def menuHospital():
         print("4._modificar Hospital por Numero")
         print("0._volver al menu principal")
         print("elije accion")
-        #opcion = input("Seleccione una opción: ")
         opcion=int(input())
-        
         if (opcion == 1):
             MENUHOSPITAL.mostrarHospitales()
         elif (opcion == 2):
@@ -196,12 +175,9 @@ def menuHospital():
         elif (opcion == 0):
             break
         else:
-            
             print("introcuce un dato valido")
 
 def menu():
-    #servicio=service.ServiceOracleHospital()
-
     while True:
         print("1.Mostrar menu Hospital")
         print("2.Mostrar menu Doctores")
@@ -212,9 +188,7 @@ def menu():
         print("7._Mostrar menu Plantilla")
         print("0.salir")
         print("elije accion")
-        #opcion = input("Seleccione una opción: ")
         opcion=int(input())
-        
         if (opcion == 1):
             menuHospital()
         elif (opcion == 2):
