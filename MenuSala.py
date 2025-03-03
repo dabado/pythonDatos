@@ -1,12 +1,12 @@
 
-from services import servicio06Oraclesala as service
+from services import servicioOracleSala as service
 from models import sala
 
 class MENUSALA:
         servicio=service.ServiceOracleSala()
         def mostrarsala():
             servicio=service.ServiceOracleSala()
-            afectados=servicio.muestrasala()
+            afectados=servicio.muestraSala()
             for fila in afectados:
                 print(fila)
                 #print(fila.numerosala, fila.numerosala, fila.apellido, fila.especialidad, fila.salario)

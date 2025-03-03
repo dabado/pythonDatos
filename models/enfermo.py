@@ -1,4 +1,4 @@
-class enfermo:
+class Enfermo:
     # inscripcion , apellido , direccion, fecha_nac, sexo, nss
     inscripcion=""
     apellido="" 

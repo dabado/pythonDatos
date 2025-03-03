@@ -4,6 +4,7 @@ from models import empleado
 
 class MENUEMPLEADO:
     servicio=service.ServiceOracleEmpleado()
+
     def nuevoEmpleado():
         servicio = service.ServiceOracleEmpleado()
         print("dame un numero para el departamento nuevo")
@@ -45,6 +46,6 @@ class MENUEMPLEADO:
     def mostrarEmpleado():
         servicio=service.ServiceOracleEmpleado()
         afectados=servicio.muestraEmpleado()
-        print(afectados)
+        #print(afectados)
         for fila in afectados:
             print( fila)

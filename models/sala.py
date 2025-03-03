@@ -1,4 +1,4 @@
-class sala:
+class Sala:
     hospital_cod=0
     sala_cod=0
     nombre=""

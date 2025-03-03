@@ -1,7 +1,7 @@
 from services import servicio07OracleEmpleado as service
 from models import empleado
 
-class MENUEmpleado:
+class MENUEEMPLEADO:
         servicio=service.ServiceOracleEmpleado()
         def mostrarEmpleadoes():
             servicio=service.ServiceOracleEmpleado()
