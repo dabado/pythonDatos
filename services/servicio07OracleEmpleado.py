@@ -1,6 +1,5 @@
 import oracledb
-from models import empleado
-
+from models.empleado import Empleado
 
 
 
@@ -36,7 +35,7 @@ class ServiceOracleEmpleado:
         cursor.execute(sql, (SALARIO, ))
         datos = []
         for row in cursor:
-            emp=empleado()
+            emp=Empleado()
             emp.idEmpleado=row[0]
             emp.apellido=row[1]
             emp.oficio=row[2]

@@ -158,9 +158,9 @@ def menuHospital():
         elif (opcion == 2):
            MENUHOSPITAL.nuevoHospital()
         elif (opcion == 3):
-            MENUHOSPITAL.quitarHospital
+            MENUHOSPITAL.quitarHospital()
         elif (opcion == 4):
-            MENUHOSPITAL.modificarHospital
+            MENUHOSPITAL.modificarHospital()
         elif (opcion == 0):
             break
         else:
