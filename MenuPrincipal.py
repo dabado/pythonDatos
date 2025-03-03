@@ -3,6 +3,7 @@ from models import hospital
 from models import doctor
 from models import departamento
 from models import plantilla
+from models import empleado
 
 from MenuHospital import MENUHOSPITAL
 from MenuDoctores import MENUDOCTORES
@@ -195,7 +196,7 @@ def menu():
         elif (opcion == 4):
             menuPlantilla()
         elif (opcion == 4):
-            MenuEmpleado()
+            MENUEMPLEADO()
         elif (opcion == 0):
             break
         else:
