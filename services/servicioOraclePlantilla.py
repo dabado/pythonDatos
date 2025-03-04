@@ -1,6 +1,5 @@
 import oracledb
 from models import plantilla 
-# Plantilla_cod , nombre , direccion , telefono , num_cama
 
 
 class ServiceOraclePlantilla:
@@ -20,43 +19,43 @@ class ServiceOraclePlantilla:
         for row in cursor:
             
             datos.append(row)
-            """
-        
-            """
+
         cursor.close()
         return datos
 
-    def insertarPlantilla(self,Plantilla_cod , nombre , direccion , telefono , num_cama):
-        sql="insert into Plantilla values(:Plantilla_cod , :nombre , :direccion , :telefono , :num_cama)"
+    def insertarPlantilla(self, hospital_cod,  sala_cod, empleado_no, apellido, funcion, turno, salario):
+        sql="insert into Plantilla values (:hospital_cod , :sala_cod , :empleado_no , :apellido , :funcion , :turno , :salario)"
         cursor=self.conexion.cursor()
-        cursor.execute(sql, (Plantilla_cod , nombre , direccion , telefono , num_cama))
+        cursor.execute(sql, ( hospital_cod,  sala_cod, empleado_no, apellido,    funcion,  turno,   salario))
         registrosAfectados=cursor.rowcount
         self.conexion.commit()
         cursor.close()
         print(f"inse {registrosAfectados}")
         return registrosAfectados
 
-    def eliminarPlantilla(self, idPlantilla):
-        sql="delete from Plantilla where Plantilla_cod=:idPlantilla"
+    def eliminarPlantilla(self, empleado_no):
+        sql="delete from Plantilla where empleado_no=:empleado_no"
         cursor = self.conexion.cursor()        
-        cursor.execute(sql, (idPlantilla, ))
+        cursor.execute(sql, (empleado_no, ))
         registros = cursor.rowcount
         self.conexion.commit()
         cursor.close()
         print(f"modificados: {registros} registros")
         return registros
 
-    def modificaPlantilla(self, Plantilla_cod , nombre , direccion , telefono , num_cama):
+    def modificaPlantilla(self, hospital_cod,  sala_cod, empleado_no, apellido,  funcion,  turno,   salario):
         sql="""
                 update Plantilla 
-                set nombre=':inombre',
-                direccion=':idireccion',
-                telefono=:itelefono , 
-                num_cama=:inum_cama
-                where Plantilla_cod=:Plantilla_cod
+                set hospital_cod=':hospital_cod',
+                sala_cod=':sala_cod',
+                apellido=:apellido ,
+                funcion=:funcion ,
+                turno=:turno ,
+                salario=:salario
+                where empleado_no=:empleado_no
             """
         cursor = self.conexion.cursor()        
-        cursor.execute(sql, ( Plantilla_cod , nombre , direccion , telefono , num_cama ))
+        cursor.execute(sql, ( hospital_cod,  sala_cod, empleado_no, apellido,    funcion,  turno,   salario ))
         registros=cursor.rowcount
         self.conexion.commit()
         cursor.close()
