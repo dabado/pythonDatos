@@ -72,4 +72,22 @@ class ServiceOraclePlantilla:
         return registros
 
 
+    def buscarPlantillaNumero(self):
 
+        sql = "select * from DEPT where DEPT_NO=:DEPT_NO" 
+        cursor=self.conexion.cursor()
+        cursor.execute(sql, (DEPT_NO, ))
+                #COMO ESTAMOS BUSCANDO POR PK, SOLAMENTE NOS PUEDE 
+                #DEVOLVER UNA FILA
+        row = cursor.fetchone()
+                #DEBEMOS COMPROBAR SI FILA TIENE CONTENIDO/ALGO
+        if (not row):
+            print("No existe el departamento")
+        else:
+                    #DIBUJAMOS LOS DATOS
+            nombre = row[1]
+            localidad = row[2]
+            print(nombre + ", " + localidad)
+        cursor.close()
+        
+        print("Fin de bbdd")

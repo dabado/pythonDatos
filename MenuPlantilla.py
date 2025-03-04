@@ -57,6 +57,8 @@ class MENUPLANTILLA:
             funcion=int(input())
             print("dame un turno para el enpleado a modificar")
             turno=int(input())
+            print("dame un salaro para el enpleado a modificar")
+            salario=int(input())
             data=servicio.modificaPlantilla(hospital_cod,  sala_cod, empleado_no, apellido,  funcion,  turno,   salario)
             print(f"afectados:{data}")
             return data
@@ -74,23 +76,8 @@ class MENUPLANTILLA:
         def buscarPlantillaNumero():
                 print("Introduzca número de departamento")
                 data = input()
-                cursor = connection.cursor()
-                sql = "select * from DEPT where DEPT_NO=" + data
-                cursor.execute(sql)
-                #COMO ESTAMOS BUSCANDO POR PK, SOLAMENTE NOS PUEDE 
-                #DEVOLVER UNA FILA
-                row = cursor.fetchone()
-                #DEBEMOS COMPROBAR SI FILA TIENE CONTENIDO/ALGO
-                if (not row):
-                    print("No existe el departamento")
-                else:
-                    #DIBUJAMOS LOS DATOS
-                    nombre = row[1]
-                    localidad = row[2]
-                    print(nombre + ", " + localidad)
-                cursor.close()
-                connection.close()
-                print("Fin de bbdd")
+                cursor = self.conection.cursor()
+
                 
         def buscadorPlantillaHospital():
                 print("Introduzca un Turno (T, M, N)")

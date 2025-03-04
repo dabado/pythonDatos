@@ -90,53 +90,55 @@ def menuSala():
 
 
 def menuPlantilla():
-    print("1.mostrar Plantilla")
-    print("2._Buscar Plantilla")
-    print("3._borrar Plantilla por Numero")
-    print("4._modificar Plantilla por Numero")
-    print("5.nueva Plantilla")
-    print("0._volver al menu principal")
-    print("elije accion")
-    opcion=int(input())
-    if (opcion == 1):
-        MENUPLANTILLA.muestraPlantilla()
-    elif (opcion == 2):
-        MENUPLANTILLA.buscarPlantilla()
-    elif (opcion == 3):
-        MENUPLANTILLA.quitarPlantilla()
-    elif (opcion == 4):
-        MENUPLANTILLA.modificarPlantilla()
-    elif (opcion == 5):
-        MENUPLANTILLA.nuevoPlantilla()
-    elif (opcion == 0):
-        exit
-    else:
-        print("introcuce un dato valido")
+    while True:
+        print("1.mostrar Plantilla")
+        print("2._Buscar Plantilla")
+        print("3._borrar Plantilla por Numero")
+        print("4._modificar Plantilla por Numero")
+        print("5.nueva Plantilla")
+        print("0._volver al menu principal")
+        print("elije accion")
+        opcion=int(input())
+        if (opcion == 1):
+            MENUPLANTILLA.muestraPlantilla()
+        elif (opcion == 2):
+            MENUPLANTILLA.buscarPlantilla()
+        elif (opcion == 3):
+            MENUPLANTILLA.quitarPlantilla()
+        elif (opcion == 4):
+            MENUPLANTILLA.modificarPlantilla()
+        elif (opcion == 5):
+            MENUPLANTILLA.nuevoPlantilla()
+        elif (opcion == 0):
+            exit
+        else:
+            print("introcuce un dato valido")
 
 
 def menuDepartamento():
-    print("1.Mostrar departamento")
-    print("2._Buscar departamento")
-    print("3._borrar Departamento por Numero")
-    print("4._modificar Departamento por Numero")
-    print("5.Nuevo Departamentos")
-    print("0._volver al menu principal")
-    print("elije accion")
-    opcion=int(input())
-    if (opcion == 1):
-        MENUDEPARTAMENTO.mostrarDepartamentos()
-    elif (opcion == 2):
-        MENUDEPARTAMENTO.BuscarOracleDepartamentoID()
-    elif (opcion == 3):
-        MENUDEPARTAMENTO.borrarDepartamentoNumero()
-    elif (opcion == 4):
-        MENUDEPARTAMENTO.modificarDepartamentoNumero()
-    elif (opcion == 5):
-        MENUDEPARTAMENTO.nuevoDepartamento()
-    elif (opcion == 0):
-        exit
-    else:
-        print("introcuce un dato valido")
+    while True:
+        print("1.Mostrar departamento")
+        print("2._Buscar departamento")
+        print("3._borrar Departamento por Numero")
+        print("4._modificar Departamento por Numero")
+        print("5.Nuevo Departamentos")
+        print("0._volver al menu principal")
+        print("elije accion")
+        opcion=int(input())
+        if (opcion == 1):
+            MENUDEPARTAMENTO.mostrarDepartamentos()
+        elif (opcion == 2):
+            MENUDEPARTAMENTO.BuscarOracleDepartamentoID()
+        elif (opcion == 3):
+            MENUDEPARTAMENTO.borrarDepartamentoNumero()
+        elif (opcion == 4):
+            MENUDEPARTAMENTO.modificarDepartamentoNumero()
+        elif (opcion == 5):
+            MENUDEPARTAMENTO.nuevoDepartamento()
+        elif (opcion == 0):
+            exit
+        else:
+            print("introcuce un dato valido")
 
 def menuDoctores():
     while True:
