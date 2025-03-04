@@ -109,7 +109,7 @@ def menuPlantilla():
     elif (opcion == 5):
         MENUPLANTILLA.nuevoPlantilla()
     elif (opcion == 0):
-        break
+        exit
     else:
         print("introcuce un dato valido")
 
@@ -134,7 +134,7 @@ def menuDepartamento():
     elif (opcion == 5):
         MENUDEPARTAMENTO.nuevoDepartamento()
     elif (opcion == 0):
-        break
+        exit
     else:
         print("introcuce un dato valido")
 
