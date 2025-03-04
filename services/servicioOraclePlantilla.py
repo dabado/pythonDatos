@@ -74,9 +74,9 @@ class ServiceOraclePlantilla:
 
     def buscarPlantillaNumero(self):
 
-        sql = "select * from DEPT where DEPT_NO=:DEPT_NO" 
+        sql = "select * from EMP where empleado_no=:empleado_no" 
         cursor=self.conexion.cursor()
-        cursor.execute(sql, (DEPT_NO, ))
+        cursor.execute(sql, (empleado_no , ))
                 #COMO ESTAMOS BUSCANDO POR PK, SOLAMENTE NOS PUEDE 
                 #DEVOLVER UNA FILA
         row = cursor.fetchone()

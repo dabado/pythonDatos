@@ -76,7 +76,7 @@ class MENUPLANTILLA:
         def buscarPlantillaNumero():
                 print("Introduzca número de departamento")
                 data = input()
-                cursor = self.conection.cursor()
+                service.plantilla(data)
 
                 
         def buscadorPlantillaHospital():
@@ -85,7 +85,7 @@ class MENUPLANTILLA:
                 sql = "select APELLIDO, FUNCION from PLANTILLA where hospital_cod=" + data 
                 print(sql)
                 connection = oracledb.connect(user='SYSTEM', password='oracle', dsn='localhost/xe')
-                cursor = connection.cursor()
+                cursor = self.connection.cursor()
                 cursor.execute(sql)
                 #RECORREMOS LOS DATOS DEL CURSOR
                 for apellido, funcion in cursor:
