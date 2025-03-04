@@ -47,7 +47,7 @@ class ServiceOracleEmpleado:
 
     def modificaEmpleado(self, emp_no, apellido , oficio , dir , fecha_alta , salario, comision, dept_no):
         sql="""
-                update Empleado 
+                update EMP 
                 set emp_no=':emp_no',
                 apellido=':apellido',
                 oficio=:oficio , 
