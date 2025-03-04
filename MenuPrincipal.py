@@ -95,6 +95,7 @@ def menuPlantilla():
     print("3._borrar Plantilla por Numero")
     print("4._modificar Plantilla por Numero")
     print("5.nueva Plantilla")
+    print("0._volver al menu principal")
     print("elije accion")
     opcion=int(input())
     if (opcion == 1):
@@ -107,6 +108,8 @@ def menuPlantilla():
         MENUPLANTILLA.modificarPlantilla()
     elif (opcion == 5):
         MENUPLANTILLA.nuevoPlantilla()
+    elif (opcion == 0):
+        break
     else:
         print("introcuce un dato valido")
 
@@ -117,6 +120,7 @@ def menuDepartamento():
     print("3._borrar Departamento por Numero")
     print("4._modificar Departamento por Numero")
     print("5.Nuevo Departamentos")
+    print("0._volver al menu principal")
     print("elije accion")
     opcion=int(input())
     if (opcion == 1):
@@ -129,6 +133,8 @@ def menuDepartamento():
         MENUDEPARTAMENTO.modificarDepartamentoNumero()
     elif (opcion == 5):
         MENUDEPARTAMENTO.nuevoDepartamento()
+    elif (opcion == 0):
+        break
     else:
         print("introcuce un dato valido")
 
