@@ -101,7 +101,7 @@ def menuPlantilla():
     if (opcion == 1):
         MENUPLANTILLA.muestraPlantilla()
     elif (opcion == 2):
-        MENUPLANTILLA.BuscarPlantilla()
+        MENUPLANTILLA.buscarPlantilla()
     elif (opcion == 3):
         MENUPLANTILLA.quitarPlantilla()
     elif (opcion == 4):

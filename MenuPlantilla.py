@@ -3,7 +3,7 @@ from services import servicioOraclePlantilla as service
 from models import plantilla 
 
 class MENUPLANTILLA:
-        servicio=service.ServiceOraclePlantilla()
+        #servicio=service.ServiceOraclePlantilla()
         def muestraPlantilla():
             servicio=service.ServiceOraclePlantilla()
             afectados=servicio.muestraPlantilla()
@@ -61,7 +61,7 @@ class MENUPLANTILLA:
             print(f"afectados:{data}")
             return data
         
-        def BuscarOracleDePlantilla():
+        def buscarPlantilla():
             servicio = service.ServiceOraclePlantilla()
             print("dame un numero para el departamento a buscar")
             hospital_cod=int(input())
