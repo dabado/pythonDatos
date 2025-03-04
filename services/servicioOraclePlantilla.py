@@ -12,7 +12,8 @@ class ServiceOraclePlantilla:
             print("fallo de conexion")
 
     def muestraPlantilla(self):
-        sql="select * from Plantilla"
+        sql="""select *
+                 from Plantilla"""
         cursor = self.conexion.cursor()
         cursor.execute(sql)
         datos = []
@@ -24,7 +25,14 @@ class ServiceOraclePlantilla:
         return datos
 
     def insertarPlantilla(self, hospital_cod,  sala_cod, empleado_no, apellido, funcion, turno, salario):
-        sql="insert into Plantilla values (:hospital_cod , :sala_cod , :empleado_no , :apellido , :funcion , :turno , :salario)"
+        sql="""insert into Plantilla
+                 values (:hospital_cod ,
+                   :sala_cod , 
+                   :empleado_no , 
+                   :apellido , 
+                   :funcion , 
+                   :turno , 
+                   :salario) """
         cursor=self.conexion.cursor()
         cursor.execute(sql, ( hospital_cod,  sala_cod, empleado_no, apellido,    funcion,  turno,   salario))
         registrosAfectados=cursor.rowcount
@@ -34,7 +42,8 @@ class ServiceOraclePlantilla:
         return registrosAfectados
 
     def eliminarPlantilla(self, empleado_no):
-        sql="delete from Plantilla where empleado_no=:empleado_no"
+        sql="""delete from Plantilla 
+                where empleado_no=:empleado_no """
         cursor = self.conexion.cursor()        
         cursor.execute(sql, (empleado_no, ))
         registros = cursor.rowcount
